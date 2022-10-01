@@ -1,11 +1,14 @@
-import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import { useDispatch } from 'react-redux';
+
+import { setUserNumber, setIsCheck } from '../features/numberSlice';
 
 import './formArea.scss'
 
 const FormArea = () => {
-  const [number, setNumber] = useState('');
+
+  const dispatch = useDispatch();
 
   return (
     <section className="left">
@@ -21,14 +24,13 @@ const FormArea = () => {
             .required('This field is required')
         })}
         onSubmit = {({number}) => {
-          setNumber(number)
-          console.log(number)
+          dispatch(setIsCheck())
+          dispatch(setUserNumber(number))
         }}
       >
         <Form>
           <label htmlFor="number"></label>
           <Field
-            id='number'
             name='number' 
             className='guess' 
             placeholder='Num'

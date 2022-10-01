@@ -18,11 +18,6 @@ main {
   justify-content: space-around;
 }
 
-.right {
-  width: 52rem;
-  font-size: 2rem;
-}
-
 /* ELEMENTS STYLE */
 h1 {
   font-size: 4rem;
@@ -71,16 +66,4 @@ h1 {
   text-align: center;
   display: block;
   margin-bottom: 3rem;
-}
-
-.message {
-  margin-bottom: 8rem;
-  height: 3rem;
-}
-
-.label-score, 
-.label-highscore, 
-.score, 
-.highscore {
-  margin-bottom: 2rem;
 }

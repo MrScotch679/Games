@@ -1,24 +1,26 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { setSecretNumber } from './features/numberSlice';
 
 import FormArea from './formArea/formArea';
-
+import InfoArea from './infoArea/infoArea';
 
 import './sos.scss';
 
 const Sos = () => {
 
-  // const [isGame, setIsGame] = useState(true);
-
-
-  useEffect(() => {
-    createSecretNumber();
-  }, [])
+  const dispatch = useDispatch()
 
   const createSecretNumber = () => {
     return Math.floor(Math.random() * 20 + 1);
   }
 
-  let secretNumber = createSecretNumber();
+  const secretNumber = createSecretNumber();
+
+  useEffect(() => {
+    dispatch(setSecretNumber(secretNumber))
+  }, []);
 
   return (
     <div className='wrapper'>
@@ -30,13 +32,7 @@ const Sos = () => {
       </header>
       <main>
         <FormArea/>
-        <section className="right">
-          <p className="message">Start guessing...</p>
-          <p className="label-score">💯 Score: <span className="score">20</span></p>
-          <p className="label-highscore">
-            🥇 Highscore: <span className="highscore">0</span>
-          </p>
-        </section>
+        <InfoArea/>
       </main>
     </div>
   )
