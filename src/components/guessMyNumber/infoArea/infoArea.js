@@ -22,6 +22,7 @@ const InfoArea = () => {
       }
     }
   )
+  
 
   const score = useSelector(state => state.guessNumber.score);
   const highscore = useSelector(state => state.guessNumber.highscore)
