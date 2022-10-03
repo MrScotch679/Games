@@ -1,24 +1,40 @@
 import { useSelector } from 'react-redux';
-
-import GameStatus from '../gameStatus/gameStatus';
+import { createSelector } from '@reduxjs/toolkit';
 
 import './infoArea.scss'
 
 const InfoArea = () => {
 
-  const state = useSelector(state => state.guessNumber);
-  const { secretNumber, userNumber, highScore, score, isCheck } = state;
-  
-  const answ = GameStatus(userNumber, secretNumber, isCheck);
-  console.log(answ)
-  console.log(userNumber, secretNumber, highScore)
+  const selectMessage = createSelector(
+    (state) => state.guessNumber.userNumber,
+    (state) => state.guessNumber.secretNumber,
+    (userNumber, secretNumber) => {
+      if (userNumber) {
+        if (userNumber > secretNumber) {
+          return 'Too high (oﾟvﾟ)ノ';
+        } else if (userNumber < secretNumber) {
+          return 'Too low (‾◡◝)';
+        } else if (userNumber === secretNumber) {
+          return 'CORRECT ヾ(≧▽≦*)o';
+        }
+      } else {
+        return 'Write your number (≧∇≦)ﾉ'
+      }
+    }
+  )
+
+  const score = useSelector(state => state.guessNumber.score);
+  const highscore = useSelector(state => state.guessNumber.highscore)
+  const message = useSelector(selectMessage);
+
+  console.log(score, highscore, message)
 
   return (
     <section className="right">
-      <p className="message">{answ}</p>
+      <p className="message">{message}</p>
       <p className="label-score">💯 Score: <span className="score">{score}</span></p>
       <p className="label-highscore">
-        🥇 Highscore: <span className="highscore">{highScore}</span>
+        🥇 Highscore: <span className="highscore">{highscore}</span>
       </p>
     </section>
   )
