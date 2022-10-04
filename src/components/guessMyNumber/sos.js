@@ -8,6 +8,7 @@ import InfoArea from './infoArea/infoArea';
 import SecretNumber from './secretNumber/secretNumber';
 
 import './sos.scss';
+import GameTitle from './gameTitle/GameTitle';
 
 const Sos = () => {
   
@@ -15,9 +16,9 @@ const Sos = () => {
   console.log(LSHighscore)
 
   const currentHighscore = useSelector(state => state.guessNumber.highscore);
-  const isGame = useSelector(state => state.guessNumber.isGame);
+  const gameStatus = useSelector(state => state.guessNumber.gameStatus);
 
-  console.log(currentHighscore, isGame)
+  console.log(currentHighscore, gameStatus)
 
   const dispatch = useDispatch();
 
@@ -30,17 +31,34 @@ const Sos = () => {
   }, [])
 
   useEffect(() => {
+    console.log(gameStatus)
     if (LSHighscore < currentHighscore) {
       localStorage.setItem('highscore', currentHighscore);
     }
-  }, [isGame])
+  }, [gameStatus])
+
+  let wrapperClass = 'wrapper'
+  switch (gameStatus) {
+    case 'win':
+      wrapperClass += ' win';
+      break;
+    case 'lost':
+      wrapperClass += ' lost';
+      break;
+    default: 
+      break;
+  }
 
   return (
-    <div className='wrapper'>
+    <div className={wrapperClass}>
       <header>
-        <h1>Guess My Number!</h1>
+        <GameTitle/>
         <p className="between">(Between 1 and 20)</p>
-        <button className="btn-guess again">Again!</button>
+        <button 
+          className="btn-guess again"
+          >
+            Again!
+          </button>
         <SecretNumber />
       </header>
       <main>
@@ -53,72 +71,3 @@ const Sos = () => {
 } 
 
 export default Sos;
-
-
-
-  // const body = document.querySelector('body'),
-  //       check = document.querySelector('.check'),
-  //       again = document.querySelector('.again'),
-  //       guess = document.querySelector('.guess');
-
-  // const answerMessage = {
-  //   tooHigh: 'Too high (oﾟvﾟ)ノ',
-  //   tooLow : 'Too low (‾◡◝)',
-  //   correct: 'CORRECT ヾ(≧▽≦*)o',
-  //   noNumber: 'Write your number (≧∇≦)ﾉ',
-  //   letGoAgain: 'LEEETS GO! ( •̀ ω •́ )y',
-  // }
-
-  // const createSecretNumber = () => {
-  //   return Math.floor(Math.random() * 20 + 1);
-  // }
-
-  // const setScoreNumber = () => {
-  //   return 20;
-  // }
-
-  // let secretNumber = createSecretNumber(),
-  //     scoreNumber = setScoreNumber(),
-  //     highscoreNumber = 0;
-
-  // const setTextContent = (selector, text) => {
-  //   document.querySelector(selector).textContent = text;
-  // }
-
-  // setTextContent('.number', '?');
-  // setTextContent('.score', scoreNumber);
-  // setTextContent('.highscore', highscoreNumber);
-
-  // const opirationLogic = () => {
-  //   if (scoreNumber > 0) {
-  //     if (guess.value === '') {
-  //       setTextContent('.message', answerMessage.noNumber);
-  //     } else if (guess.value === secretNumber) {
-  //       setTextContent('.message', answerMessage.correct);
-  //       setTextContent('.number', secretNumber);
-
-  //       body.style.backgroundColor = '#60b347';
-
-  //       highscoreNumber = scoreNumber > highscoreNumber ? scoreNumber : highscoreNumber;
-  //       setTextContent('.highscore', highscoreNumber);
-  //     } else if (guess.value !== secretNumber) {
-  //       scoreNumber--;
-  //       setTextContent('.score', scoreNumber);
-
-  //       setTextContent('.message', guess.value > secretNumber ? 
-  //       answerMessage.tooHigh : answerMessage.tooLow);
-  //     }
-  //   }
-  // }
-
-  // check.addEventListener('click', opirationLogic);
-
-  // again.addEventListener('click', () => {
-  //   setTextContent('.number', '?');
-  //   secretNumber = createSecretNumber();
-  //   scoreNumber = setScoreNumber();
-  //   setTextContent('.score', scoreNumber);
-  //   body.style.backgroundColor = '';
-  //   setTextContent('.message', answerMessage.letGoAgain);
-  //   guess.value = '';
-  // })

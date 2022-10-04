@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 
-import { changeHighScore, changeScore, setIsGame } from '../features/numberSlice';
+import { changeHighScore, changeScore, setGameStatus } from '../features/numberSlice';
 
 import { setUserNumber } from '../features/numberSlice';
 
@@ -29,7 +29,7 @@ const FormArea = () => {
           dispatch(setUserNumber(number))
           dispatch(changeScore())
           dispatch(changeHighScore())
-          dispatch(setIsGame())
+          dispatch(setGameStatus())
         }}
       >
         <Form>
