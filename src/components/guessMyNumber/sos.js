@@ -1,26 +1,39 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { setSecretNumber } from './features/numberSlice';
+import { setHighScore } from './features/numberSlice';
 
 import FormArea from './formArea/formArea';
 import InfoArea from './infoArea/infoArea';
+import SecretNumber from './secretNumber/secretNumber';
 
 import './sos.scss';
 
 const Sos = () => {
+  
+  const LSHighscore = localStorage.getItem('highscore');
+  console.log(LSHighscore)
 
-  const dispatch = useDispatch()
+  const currentHighscore = useSelector(state => state.guessNumber.highscore);
+  const isGame = useSelector(state => state.guessNumber.isGame);
 
-  const createSecretNumber = () => {
-    return Math.floor(Math.random() * 20 + 1);
-  }
+  console.log(currentHighscore, isGame)
 
-  const secretNumber = createSecretNumber();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setSecretNumber(secretNumber))
-  }, []);
+    if (!LSHighscore) {
+      localStorage.setItem('highscore', 0);
+    } else {
+      dispatch(setHighScore(LSHighscore));
+    }
+  }, [])
+
+  useEffect(() => {
+    if (LSHighscore < currentHighscore) {
+      localStorage.setItem('highscore', currentHighscore);
+    }
+  }, [isGame])
 
   return (
     <div className='wrapper'>
@@ -28,7 +41,7 @@ const Sos = () => {
         <h1>Guess My Number!</h1>
         <p className="between">(Between 1 and 20)</p>
         <button className="btn-guess again">Again!</button>
-        <div className="number">{secretNumber}</div>
+        <SecretNumber />
       </header>
       <main>
         <FormArea/>

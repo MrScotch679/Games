@@ -7,6 +7,7 @@ export const numberSlice = createSlice({
     userNumber: null,
     highscore: 0,
     score: 20,
+    isGame: true,
   },
   reducers: {
     setSecretNumber: (state, action) => {
@@ -15,12 +16,20 @@ export const numberSlice = createSlice({
     setUserNumber: (state, action) => {
       state.userNumber = +action.payload;
     },
-    setScore: (state) => {
+    setHighScore: (state, action) => {
+      state.highscore = +action.payload;
+    },
+    setIsGame: (state) => {
+      if (state.secretNumber === state.userNumber) {
+        state.isGame = false;
+      }
+    },
+    changeScore: (state) => {
       if (state.secretNumber !== state.userNumber) {
         state.score -= 1;
       }
     },
-    setHighScore: (state) => {
+    changeHighScore: (state) => {
       if (state.secretNumber === state.userNumber && state.highscore < state.score) {
         state.highscore = state.score;
       }
@@ -28,6 +37,6 @@ export const numberSlice = createSlice({
   },
 })
 
-export const { setSecretNumber, setUserNumber, setScore, setHighScore } = numberSlice.actions
+export const { setSecretNumber, setUserNumber, setHighScore, setIsGame, changeScore, changeHighScore } = numberSlice.actions
 
 export default numberSlice.reducer
