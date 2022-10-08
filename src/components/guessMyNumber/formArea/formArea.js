@@ -2,9 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 
-import { changeHighScore, changeScore, setGameStatus } from '../features/numberSlice';
-
-import { setUserNumber } from '../features/numberSlice';
+import { changeHighScore, changeScore, setGameStatus, setUserNumber } from '../features/numberSlice';
 
 import './formArea.scss'
 
@@ -26,7 +24,6 @@ const FormArea = () => {
             .required('This field is required')
         })}
         onSubmit = {({number}, {resetForm}) => {
-          console.log(number)
           dispatch(setUserNumber(number))
           dispatch(changeScore())
           dispatch(changeHighScore())

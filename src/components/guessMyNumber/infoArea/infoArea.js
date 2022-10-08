@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { createSelector } from '@reduxjs/toolkit';
 
-import './infoArea.scss'
+import './infoArea.scss';
 
 const InfoArea = () => {
 
@@ -18,17 +18,15 @@ const InfoArea = () => {
           return 'CORRECT ヾ(≧▽≦*)o';
         }
       } else {
-        return 'Write your number (≧∇≦)ﾉ'
+        return 'Write your number (≧∇≦)ﾉ';
       }
     }
   )
  
   const score = useSelector(state => state.guessNumber.score);
-  const highscore = useSelector(state => state.guessNumber.highscore)
+  const highscore = useSelector(state => state.guessNumber.highscore);
   const message = useSelector(selectMessage);
-  const gameStatus = useSelector(state => state.guessNumber.gameStatus)
-
-  console.log(score, highscore, message)
+  const gameStatus = useSelector(state => state.guessNumber.gameStatus);
 
   return (
     <section className="right">
