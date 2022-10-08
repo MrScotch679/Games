@@ -7,20 +7,18 @@ import FormArea from './formArea/formArea';
 import InfoArea from './infoArea/infoArea';
 import SecretNumber from './secretNumber/secretNumber';
 
-import './sos.scss';
+import './guessMyNumber.scss';
 import GameTitle from './gameTitle/GameTitle';
+import RestartButton from './restartButton/restartButton';
 
-const Sos = () => {
-  
-  const LSHighscore = localStorage.getItem('highscore');
-  console.log(LSHighscore)
+const GuessMyNumber = () => {
 
   const currentHighscore = useSelector(state => state.guessNumber.highscore);
   const gameStatus = useSelector(state => state.guessNumber.gameStatus);
 
-  console.log(currentHighscore, gameStatus)
-
   const dispatch = useDispatch();
+
+  const LSHighscore = localStorage.getItem('highscore');
 
   useEffect(() => {
     if (!LSHighscore) {
@@ -54,12 +52,8 @@ const Sos = () => {
       <header>
         <GameTitle/>
         <p className="between">(Between 1 and 20)</p>
-        <button 
-          className="btn-guess again"
-          >
-            Again!
-          </button>
-        <SecretNumber />
+        <RestartButton/>
+        <SecretNumber/>
       </header>
       <main>
         <FormArea/>
@@ -70,4 +64,4 @@ const Sos = () => {
 
 } 
 
-export default Sos;
+export default GuessMyNumber;

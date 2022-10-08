@@ -1,4 +1,4 @@
-import Sos from '../guessMyNumber/sos';
+import GuessMyNumber from '../guessMyNumber/guessMyNumber';
 
 import './App.scss';
 
@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <>
-      <Sos/>
+      <GuessMyNumber/>
       {/* <Spinner/> */}
     </>
     
