@@ -6,10 +6,10 @@ import { setHighScore } from './features/numberSlice';
 import FormArea from './formArea/formArea';
 import InfoArea from './infoArea/infoArea';
 import SecretNumber from './secretNumber/secretNumber';
-
-import './guessMyNumber.scss';
 import GameTitle from './gameTitle/GameTitle';
 import RestartButton from './restartButton/restartButton';
+
+import './guessMyNumber.scss';
 
 const GuessMyNumber = () => {
 
@@ -26,16 +26,17 @@ const GuessMyNumber = () => {
     } else {
       dispatch(setHighScore(LSHighscore));
     }
+    // eslint-disable-next-line
   }, [])
 
   useEffect(() => {
-    console.log(gameStatus)
     if (LSHighscore < currentHighscore) {
       localStorage.setItem('highscore', currentHighscore);
     }
+    // eslint-disable-next-line
   }, [gameStatus])
 
-  let wrapperClass = 'wrapper'
+  let wrapperClass = 'wrapper';
   switch (gameStatus) {
     case 'win':
       wrapperClass += ' win';

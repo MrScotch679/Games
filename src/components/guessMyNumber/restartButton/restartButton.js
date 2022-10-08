@@ -1,10 +1,9 @@
 import { useDispatch } from "react-redux";
-import { restartGame } from "../features/numberSlice";
+import { restartGame, setSecretNumber } from "../features/numberSlice";
 import createSecretNumber from "../features/createSecretNumber";
-import { setSecretNumber } from "../features/numberSlice";
 
 const RestartButton = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   return (
     <button 

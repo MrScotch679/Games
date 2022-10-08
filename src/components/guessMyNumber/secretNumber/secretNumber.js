@@ -9,11 +9,12 @@ import './secretNumber.scss';
 const SecretNumber = () => {
 
   const dispatch = useDispatch();
-  const gameStatus = useSelector(state => state.guessNumber.gameStatus)
-  const secretNumber = useSelector(state => state.guessNumber.secretNumber)
+  const gameStatus = useSelector(state => state.guessNumber.gameStatus);
+  const secretNumber = useSelector(state => state.guessNumber.secretNumber);
 
   useEffect(() => {
-    dispatch(setSecretNumber(createSecretNumber()))
+    dispatch(setSecretNumber(createSecretNumber()));
+    // eslint-disable-next-line
   }, []);
 
   return (

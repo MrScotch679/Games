@@ -11,11 +11,11 @@ const GameTitle = () => {
       case 'lost':
         return 'You LOST! (≧∇≦)ﾉ';
       default: 
-        return 'Guess My Number!'
+        return 'Guess My Number!';
     }
   }
 
-  const gameTitle = gameTitleCreater(gameStatus)
+  const gameTitle = gameTitleCreater(gameStatus);
 
   return (
     <h1>{gameTitle}</h1>
