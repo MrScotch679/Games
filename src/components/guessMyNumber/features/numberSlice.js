@@ -21,14 +21,14 @@ export const numberSlice = createSlice({
     },
     setGameStatus: (state) => {
       if (state.secretNumber === state.userNumber) {
-        state.gameStatus = 'win'
+        state.gameStatus = 'win';
       } else if (state.score <= 0) {
-        state.gameStatus = 'lost'
+        state.gameStatus = 'lost';
       }
     },
     changeScore: (state) => {
       if (state.secretNumber !== state.userNumber 
-          && state.score > 0 
+          && state.score > 0
           && state.gameStatus === 'play') {
         state.score -= 1;
       }
@@ -39,9 +39,14 @@ export const numberSlice = createSlice({
         state.highscore = state.score;
       }
     },
+    restartGame: (state) => {
+      state.score = 20;
+      state.gameStatus = 'play';
+      state.userNumber = null;
+    },
   },
 })
 
-export const { setSecretNumber, setUserNumber, setHighScore, setGameStatus, changeScore, changeHighScore } = numberSlice.actions
+export const { setSecretNumber, setUserNumber, setHighScore, setGameStatus, changeScore, changeHighScore, restartGame } = numberSlice.actions;
 
-export default numberSlice.reducer
+export default numberSlice.reducer;

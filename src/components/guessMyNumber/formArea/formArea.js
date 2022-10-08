@@ -25,11 +25,13 @@ const FormArea = () => {
             .max(20, 'Number must be less than or equal to 20')
             .required('This field is required')
         })}
-        onSubmit = {({number}) => {
+        onSubmit = {({number}, {resetForm}) => {
+          console.log(number)
           dispatch(setUserNumber(number))
           dispatch(changeScore())
           dispatch(changeHighScore())
           dispatch(setGameStatus())
+          resetForm()
         }}
       >
         <Form>
