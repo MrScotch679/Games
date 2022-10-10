@@ -50,16 +50,16 @@ const GuessMyNumber = () => {
 
   return (
     <div className={wrapperClass}>
-      <header>
+      <div className='header'>
         <GameTitle/>
         <p className="between">(Between 1 and 20)</p>
         <RestartButton/>
         <SecretNumber/>
-      </header>
-      <main>
+      </div>
+      <div className='main'>
         <FormArea/>
         <InfoArea/>
-      </main>
+      </div>
     </div>
   )
 
