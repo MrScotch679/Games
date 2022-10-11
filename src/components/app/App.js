@@ -3,7 +3,8 @@ import { lazy, Suspense } from "react";
 
 import Spinner from '../spinner/Spinner';
 
-const GuessMyNumber = lazy(() => import('../guessMyNumber/guessMyNumber'))
+const GuessMyNumber = lazy(() => import('../guessMyNumber/guessMyNumber'));
+const MainPage = lazy(() => import('../mainPage/mainPage'));
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
       <main className="app">
           <Suspense fallback={<Spinner/>}>
             <Routes>
-              <Route path="/" />
+              <Route path="/" element={<MainPage/>}/>
               <Route path="/guess-my-number" element={<GuessMyNumber/>}/>
             </Routes>
           </Suspense>
