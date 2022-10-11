@@ -13,7 +13,7 @@ const App = () => {
           <Suspense fallback={<Spinner/>}>
             <Routes>
               <Route path="/" element={<MainPage/>}/>
-              <Route path="/guess-my-number" element={<GuessMyNumber/>}/>
+              <Route path="s" element={<GuessMyNumber/>}/>
             </Routes>
           </Suspense>
       </main>
