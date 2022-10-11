@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -15,7 +16,7 @@ const MainPage = () => {
   const createItems = (some) => {
     const items = some.map((item) => {
       return (
-        <Card key={item.gameName} style={{ width: '33%' }}>
+        <Card key={item.gameName}>
           <Card.Img variant="top" src="https://nationaltoday.com/wp-content/uploads/2021/10/National-Dice-Day-640x514.jpg" />
           <Card.Body>
             <Card.Title>{item.gameName}</Card.Title>
@@ -24,22 +25,29 @@ const MainPage = () => {
             </Card.Text>
             <Accordion>
               <Accordion.Item eventKey="0">
-                <Accordion.Header>Rules</Accordion.Header>
+                <Accordion.Header>How to play</Accordion.Header>
                 <Accordion.Body>
                   {item.guide}
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
-            <Button variant="primary">{item.gameName}</Button>
+            <Link to={item.linkTo}>
+              <Button 
+                variant="primary"
+                >
+                {item.gameName}
+              </Button>
+            </Link>
+            
           </Card.Body>
         </Card>
       )
     })
 
     return (
-      <>
+      <div className='game-wrapper'>
         {items}
-      </>
+      </div>
     )
   }
 
@@ -52,9 +60,7 @@ const MainPage = () => {
       <div className="main-page-title">
         GameTitle
       </div>
-      <div className='wrapper'>
-        {items}
-      </div>
+      {items}
 
     </div>
   )
