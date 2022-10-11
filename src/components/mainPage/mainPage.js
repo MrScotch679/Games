@@ -9,9 +9,7 @@ import './mainPage.scss'
 
 const MainPage = () => {
   
-  const games = useSelector(state => state.gameSlice.games) 
-
-  console.log(games)
+  const games = useSelector(state => state.gameSlice.games)
 
   const createItems = (some) => {
     const items = some.map((item) => {
@@ -38,7 +36,6 @@ const MainPage = () => {
                 {item.gameName}
               </Button>
             </Link>
-            
           </Card.Body>
         </Card>
       )
