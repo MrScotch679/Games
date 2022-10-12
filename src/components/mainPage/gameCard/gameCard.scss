@@ -1,0 +1,50 @@
+.item {
+  width: calc(100%/3);
+}
+
+.game-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding-top: 5vh;
+}
+
+.card {
+  font-family: 'Roboto', sans-serif;
+  width: calc(100%/3);
+  &-img {
+    height: 25vh;
+    width: 100%;
+    object-fit: cover;
+  }
+  &-title {
+    font-weight: 900;
+    font-size: 2vh;
+    margin-bottom: 1vh;
+  }
+  &-text {
+    font-weight: 400;
+    font-size: 1.5vh;
+    margin-bottom: 1vh;
+  }
+}
+
+.accordion {
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 1vh;
+  &-button {
+    font-weight: 700;
+    font-size: 1.5vh;
+  }
+  &-body {
+    font-weight: 400;
+    font-size: 1.5vh;
+  }
+}
+
+.btn {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.5vh;
+}
