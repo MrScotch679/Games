@@ -1,13 +1,25 @@
 {
   "files": {
-    "main.css": "/Games/static/css/main.06786bba.css",
-    "main.js": "/Games/static/js/main.97fb5c97.js",
+    "main.css": "/Games/static/css/main.3cf4127f.css",
+    "main.js": "/Games/static/js/main.9a34272f.js",
+    "static/css/206.d3522b41.chunk.css": "/Games/static/css/206.d3522b41.chunk.css",
+    "static/js/206.274917bf.chunk.js": "/Games/static/js/206.274917bf.chunk.js",
+    "static/css/893.df551028.chunk.css": "/Games/static/css/893.df551028.chunk.css",
+    "static/js/893.4d2bf504.chunk.js": "/Games/static/js/893.4d2bf504.chunk.js",
+    "static/js/803.bc1c2e26.chunk.js": "/Games/static/js/803.bc1c2e26.chunk.js",
+    "static/js/413.463b6485.chunk.js": "/Games/static/js/413.463b6485.chunk.js",
     "index.html": "/Games/index.html",
-    "main.06786bba.css.map": "/Games/static/css/main.06786bba.css.map",
-    "main.97fb5c97.js.map": "/Games/static/js/main.97fb5c97.js.map"
+    "main.3cf4127f.css.map": "/Games/static/css/main.3cf4127f.css.map",
+    "main.9a34272f.js.map": "/Games/static/js/main.9a34272f.js.map",
+    "206.d3522b41.chunk.css.map": "/Games/static/css/206.d3522b41.chunk.css.map",
+    "206.274917bf.chunk.js.map": "/Games/static/js/206.274917bf.chunk.js.map",
+    "893.df551028.chunk.css.map": "/Games/static/css/893.df551028.chunk.css.map",
+    "893.4d2bf504.chunk.js.map": "/Games/static/js/893.4d2bf504.chunk.js.map",
+    "803.bc1c2e26.chunk.js.map": "/Games/static/js/803.bc1c2e26.chunk.js.map",
+    "413.463b6485.chunk.js.map": "/Games/static/js/413.463b6485.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.06786bba.css",
-    "static/js/main.97fb5c97.js"
+    "static/css/main.3cf4127f.css",
+    "static/js/main.9a34272f.js"
   ]
 }
