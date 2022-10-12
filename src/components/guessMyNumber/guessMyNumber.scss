@@ -12,13 +12,13 @@
   background-color: chocolate;
 }
 
-header {
+.header {
   position: relative;
   height: 35vh;
   border-bottom: 7px solid #eee;
 }
 
-main {
+.main {
   height: 65vh;
   display: flex;
   align-items: center;
@@ -41,12 +41,6 @@ h1 {
   position: absolute;
   top: 2rem;
   right: 2rem;
-}
-
-.again {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
 }
 
 .guess {

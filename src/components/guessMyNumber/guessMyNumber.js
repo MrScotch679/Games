@@ -8,6 +8,7 @@ import InfoArea from './infoArea/infoArea';
 import SecretNumber from './secretNumber/secretNumber';
 import GameTitle from './gameTitle/GameTitle';
 import RestartButton from './restartButton/restartButton';
+import BackToAllButton from './backToAllButton/backToAllButton';
 
 import './guessMyNumber.scss';
 
@@ -50,16 +51,17 @@ const GuessMyNumber = () => {
 
   return (
     <div className={wrapperClass}>
-      <header>
+      <div className='header'>
         <GameTitle/>
         <p className="between">(Between 1 and 20)</p>
         <RestartButton/>
+        <BackToAllButton/>
         <SecretNumber/>
-      </header>
-      <main>
+      </div>
+      <div className='main'>
         <FormArea/>
         <InfoArea/>
-      </main>
+      </div>
     </div>
   )
 

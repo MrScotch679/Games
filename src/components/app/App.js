@@ -1,16 +1,23 @@
-import GuessMyNumber from '../guessMyNumber/guessMyNumber';
+import { HashRouter, Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
 
-import './App.scss';
+import Spinner from '../spinner/Spinner';
 
-// import Spinner from '../spinner/Spinner';
+const GuessMyNumber = lazy(() => import('../guessMyNumber/guessMyNumber'));
+const MainPage = lazy(() => import('../mainPage/mainPage'));
 
 const App = () => {
-
   return (
-    <>
-      <GuessMyNumber/>
-      {/* <Spinner/> */}
-    </>
+    <HashRouter basename="">
+      <main className="app">
+          <Suspense fallback={<Spinner/>}>
+            <Routes>
+              <Route path="/" element={<MainPage/>}/>
+              <Route path="guess-my-number" element={<GuessMyNumber/>}/>
+            </Routes>
+          </Suspense>
+      </main>
+    </HashRouter>
     
   )
 }
