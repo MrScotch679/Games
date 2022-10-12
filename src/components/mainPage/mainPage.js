@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
 
-import './mainPage.scss'
+import './mainPage.scss';
 
 const MainPage = () => {
   
@@ -15,7 +15,7 @@ const MainPage = () => {
     const items = some.map((item) => {
       return (
         <Card key={item.gameName}>
-          <Card.Img variant="top" src="https://nationaltoday.com/wp-content/uploads/2021/10/National-Dice-Day-640x514.jpg" />
+          <Card.Img variant="top" src={item.thumbnail} />
           <Card.Body>
             <Card.Title>{item.gameName}</Card.Title>
             <Card.Text>
@@ -53,9 +53,12 @@ const MainPage = () => {
   console.log(items)
 
   return (
-    <div className="container">
-      <div className="main-page-title">
-        GameTitle
+    <div className="container main-page">
+      <div className="main-page__title">
+        Game pack
+      </div>
+      <div className='main-page__subtitle'>
+        You wanna play?! LET'S PLAY!
       </div>
       {items}
 

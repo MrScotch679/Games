@@ -8,6 +8,7 @@ import InfoArea from './infoArea/infoArea';
 import SecretNumber from './secretNumber/secretNumber';
 import GameTitle from './gameTitle/GameTitle';
 import RestartButton from './restartButton/restartButton';
+import BackToAllButton from './backToAllButton/backToAllButton';
 
 import './guessMyNumber.scss';
 
@@ -54,6 +55,7 @@ const GuessMyNumber = () => {
         <GameTitle/>
         <p className="between">(Between 1 and 20)</p>
         <RestartButton/>
+        <BackToAllButton/>
         <SecretNumber/>
       </div>
       <div className='main'>
