@@ -54,17 +54,3 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0; 
 }
-
-.btn-guess {
-  font-family: 'Press Start 2P', sans-serif;
-  border: none;
-  background-color: #eee;
-  color: #222;
-  font-size: 2rem;
-  font-family: inherit;
-  padding: 2rem 3rem;
-  cursor: pointer;
-  &:hover {
-    background-color: #ccc;
-  }
-}

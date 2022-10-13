@@ -18,7 +18,7 @@ const SecretNumber = () => {
   }, []);
 
   return (
-    <div className="number">{gameStatus === 'play' ? '?' : secretNumber}</div>
+    <div className="gmn__number">{gameStatus === 'play' ? '?' : secretNumber}</div>
   )
 }
 

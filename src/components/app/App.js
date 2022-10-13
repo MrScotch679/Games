@@ -3,8 +3,9 @@ import { lazy, Suspense } from "react";
 
 import Spinner from '../spinner/Spinner';
 
-const GuessMyNumber = lazy(() => import('../guessMyNumber/guessMyNumber'));
 const MainPage = lazy(() => import('../mainPage/mainPage'));
+const GuessMyNumber = lazy(() => import('../guessMyNumber/guessMyNumber'));
+const LuckyDice = lazy(() => import('../luckyDice/luckyDice'));
 const ErrorPage = lazy(() => import('../errorPage/errorPage'));
 
 const App = () => {
@@ -15,12 +16,12 @@ const App = () => {
             <Routes>
               <Route path="/" element={<MainPage/>}/>
               <Route path="guess-my-number" element={<GuessMyNumber/>}/>
+              <Route path="lucky-dice" element={<LuckyDice/>}/>
               <Route path="*" element={<ErrorPage/>}/>
             </Routes>
           </Suspense>
       </main>
     </HashRouter>
-    
   )
 }
 

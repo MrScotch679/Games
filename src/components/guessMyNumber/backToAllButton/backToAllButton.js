@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
 
-import './backToAllButton.scss';
-
 const BackToAllButton = () => {
   return (
     <Link to={'/'}>
       <button 
-      className="btn-guess back"
+      className="btn-guess btn-guess_back"
       >
         Main page!
       </button>

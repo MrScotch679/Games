@@ -29,11 +29,11 @@ const InfoArea = () => {
   const gameStatus = useSelector(state => state.guessNumber.gameStatus);
 
   return (
-    <section className="right">
-      <p className="message">{gameStatus === 'play' ? message : null}</p>
-      <p className="label-score">💯 Score: <span className="score">{score}</span></p>
-      <p className="label-highscore">
-        🥇 Highscore: <span className="highscore">{highscore}</span>
+    <section className="gmn__right">
+      <p className="gmn__message">{gameStatus === 'play' ? message : null}</p>
+      <p className="gmn__label-score">💯 Score: <span className="gmn__score">{score}</span></p>
+      <p className="gmn__label-highscore">
+        🥇 Highscore: <span className="gmn__highscore">{highscore}</span>
       </p>
     </section>
   )

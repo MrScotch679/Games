@@ -1,16 +1,16 @@
-.right {
-  width: 52rem;
-  font-size: 2rem;
-}
-
-.message {
-  margin-bottom: 8rem;
-  height: 3rem;
-}
-
-.label-score, 
-.label-highscore, 
-.score, 
-.highscore {
-  margin-bottom: 2rem;
+.gmn {
+  &__right {
+    width: 52rem;
+    font-size: 2rem;
+  }
+  &__message {
+    margin-bottom: 8rem;
+    height: 3rem;
+  }
+  &__label-score, 
+  &__label-highscore, 
+  &__score, 
+  &__highscore {
+    margin-bottom: 2rem;
+  }
 }
