@@ -1,26 +1,22 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
-import { setNumberOnDice } from "../features/luckyDiceSlice";
-import randomNumber from "../features/randomNumber";
+import './dice.scss';
 
 const Dice = () => {
 
-  const dispatch = useDispatch();
-
   const numberOnDice = useSelector(state => state.luckyDice.numberOnDice);
-  const number = randomNumber();
 
-  console.log(numberOnDice)
-
-  useEffect(() => {
-    dispatch(setNumberOnDice(number))
-  }, [])
-
-  
+  let imgClass = 'ld__dice ld__hide';
+  if (numberOnDice) {
+    imgClass = 'ld__dice';
+  }
 
   return (
-    <img src={require(`../../../resources/luckuDice/dice-${numberOnDice ? 1 : numberOnDice}.png`)} alt="Playing dice" className="ld__dice ld__hide" />
+    <img 
+      src={require(`../../../resources/luckuDice/dice-${numberOnDice ? numberOnDice : 1}.png`)} 
+      alt="Playing dice" 
+      className={imgClass}
+    />
   )
 }
 

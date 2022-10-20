@@ -19,72 +19,7 @@
     overflow: hidden;
     display: flex;
   }
-  &__name {
-    position: relative;
-    font-size: 4rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    word-spacing: 2px;
-    font-weight: 300;
-    margin-bottom: 1rem;
-  }
-  &__score {
-    font-size: 8rem;
-    font-weight: 300;
-    color: #c7365f;
-    margin-bottom: auto;
-  }
-  &__current {
-    background-color: #c7365f;
-    opacity: 0.8;
-    border-radius: 9px;
-    color: #fff;
-    width: 65%;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.75s;
-    &-label {
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      font-size: 1.7rem;
-      color: #ddd;
-    }
-    &-score {
-      font-size: 3.5rem;
-    }
-  }
-  &__player {
-    flex: 50%;
-    padding: 9rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.75s;
-    &_active {
-      background-color: rgba(255, 255, 255, 0.4);
-    }
-  }
 }
-
-// .ld__hide {
-//   display: none;
-// }
-
-
-
-.ld__player_active {
-  .ld__name {
-    font-weight: 700;
-  }
-  .ld__score {
-    font-weight: 400;
-  }
-  .ld__current {
-    opacity: 1;
-  }
-}
-
-
 
 /* ABSOLUTE POSITIONED ELEMENTS */
 .ld__btn {
@@ -128,22 +63,5 @@
   }
   &_hold {
     top: 46.1rem;
-  }
-}
-
-.ld__dice {
-  position: absolute;
-  left: 50%;
-  top: 16.5rem;
-  transform: translateX(-50%);
-  height: 10rem;
-  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
-}
-
-.ld__player_winner {
-  background-color: #2f2f2f;
-  .ld__name {
-    font-weight: 700;
-    color: #c7365f;
   }
 }
