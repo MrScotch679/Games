@@ -6,7 +6,7 @@ import { setHighScore } from './features/numberSlice';
 import FormArea from './formArea/formArea';
 import InfoArea from './infoArea/infoArea';
 import SecretNumber from './secretNumber/secretNumber';
-import GameTitle from './gameTitle/gameTitle';
+import GameTitle from './gameTitle/GameTitle';
 import RestartButton from './restartButton/restartButton';
 import BackToAllButton from './backToAllButton/backToAllButton';
 
@@ -66,7 +66,6 @@ const GuessMyNumber = () => {
       </div>
     </div>
   )
-
 } 
 
 export default GuessMyNumber;

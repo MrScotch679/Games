@@ -36,10 +36,19 @@ export const luckyDice = createSlice({
     },
     changeCurrentScore: (state) => {
       state.players[state.currentPlayer].currentScore += state.numberOnDice;
-    }
+    },
+    clearCurrentScore: (state) => {
+      state.players[state.currentPlayer].currentScore = 0;
+    },
   },
 })
 
-export const { setNumberOnDice, setTotalScore, changeCurrentPlayer, changeCurrentScore } = luckyDice.actions;
+export const { 
+  setNumberOnDice, 
+  setTotalScore, 
+  changeCurrentPlayer, 
+  changeCurrentScore,
+  clearCurrentScore, 
+} = luckyDice.actions;
 
 export default luckyDice.reducer;
