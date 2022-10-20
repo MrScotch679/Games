@@ -6,7 +6,7 @@ import { setHighScore } from './features/numberSlice';
 import FormArea from './formArea/formArea';
 import InfoArea from './infoArea/infoArea';
 import SecretNumber from './secretNumber/secretNumber';
-import GameTitle from './gameTitle/GameTitle';
+import GameTitle from './gameTitle/gameTitle';
 import RestartButton from './restartButton/restartButton';
 import BackToAllButton from './backToAllButton/backToAllButton';
 
@@ -37,13 +37,13 @@ const GuessMyNumber = () => {
     // eslint-disable-next-line
   }, [gameStatus])
 
-  let wrapperClass = 'wrapper';
+  let wrapperClass = 'gmn';
   switch (gameStatus) {
     case 'win':
-      wrapperClass += ' win';
+      wrapperClass += ' gmn_win';
       break;
     case 'lost':
-      wrapperClass += ' lost';
+      wrapperClass += ' gmn_lost';
       break;
     default: 
       break;
@@ -51,14 +51,16 @@ const GuessMyNumber = () => {
 
   return (
     <div className={wrapperClass}>
-      <div className='header'>
+      <div className='gmn__header'>
         <GameTitle/>
-        <p className="between">(Between 1 and 20)</p>
+        <p className="gmn__between">
+          (Between 1 and 20)
+        </p>
         <RestartButton/>
         <BackToAllButton/>
         <SecretNumber/>
       </div>
-      <div className='main'>
+      <div className='gmn__main'>
         <FormArea/>
         <InfoArea/>
       </div>

@@ -11,9 +11,9 @@ const FormArea = () => {
   const dispatch = useDispatch();
 
   return (
-    <section className="left">
+    <>
       <Formik
-        className="left"
+        className="gmn__left"
         initialValues = {{
           number: ''
         }}
@@ -35,19 +35,19 @@ const FormArea = () => {
           <label htmlFor="number"></label>
           <Field
             name='number' 
-            className='guess' 
+            className='gmn__guess' 
             placeholder='Num'
           />
           <button
             type='submit'   
-            className="btn-guess check"
+            className="btn-guess"
           >
             Check!
           </button>
-          <ErrorMessage component='div' className='error-message' name='number'/>
+          <ErrorMessage component='div' className='gmn__error-message' name='number'/>
         </Form>
       </Formik>
-    </section>
+    </>
   )
 }
 

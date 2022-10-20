@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 
+import './gameTitle.scss';
 
 const GameTitle = () => {
   const gameStatus = useSelector(state => state.guessNumber.gameStatus);
@@ -18,7 +19,7 @@ const GameTitle = () => {
   const gameTitle = gameTitleCreater(gameStatus);
 
   return (
-    <h1>{gameTitle}</h1>
+    <h2 className="gmn__title">{gameTitle}</h2>
   )
 }
 
