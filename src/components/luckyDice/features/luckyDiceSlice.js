@@ -68,7 +68,8 @@ export const {
   setWinner, 
   changeCurrentPlayer, 
   changeCurrentScore,
-  clearCurrentScore, 
+  clearCurrentScore,
+  restartGame, 
 } = luckyDice.actions;
 
 export default luckyDice.reducer;
