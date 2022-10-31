@@ -17,7 +17,7 @@ const Players = () => {
       }
       if (item.isWinner) {
         playerClass += ' ld__player_winner';
-        playerName = 'Winner!'
+        playerName = 'Winner!';
       }
 
       return (

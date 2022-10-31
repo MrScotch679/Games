@@ -1,5 +1,6 @@
 .ld {
   font-family: 'Nunito', sans-serif;
+  position: relative;
   font-weight: 400;
   height: 100vh;
   color: #333;
@@ -63,5 +64,9 @@
   }
   &_hold {
     top: 46.1rem;
+  }
+  &_back {
+    top: 7rem;
+    left: 11rem;
   }
 }
