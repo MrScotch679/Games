@@ -1,10 +1,27 @@
-# **The project is under development** ψ(｀∇´)ψ
-## **You can always watch the development process and see other projects**
-- [**Alpha demo**](https://mrscotch679.github.io/Games/) 
-> **Projects:**
-- [**Marvel-information-portal**](https://github.com/MrScotch679/Marvel-information-portal)
-- [**Corporate-website**](https://github.com/MrScotch679/Corporate-website)
+# **Game-pack** ψ(｀∇´)ψ
+## **Description**
+> **It is a *React + React-redux* application. In which there are two exciting games that can be played both alone and in a company. Come and check! （￣︶￣）↗**
+___
+## **Demo**
+> [**Show demo**](https://mrscotch679.github.io/Games/)
+___
+## **List of technologies**
+>- **React**
+>- **React-Redux**
+>- **React-router-dom**
+>- **React-Bootstrap**
+>- **Formik**
+>- **SASS**
+>- **YUP**
 ____
-## **Come back soon everything will be ready** 
-## **SEE YOU** (´▽`ʃ♡ƪ)
+## **How to use**
+```
+$ git clone https://github.com/MrScotch679/Games.git
+$ npm install
+```
+___
+## **Run project**
+```
+$ npm start 
+```
 
