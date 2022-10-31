@@ -47,6 +47,14 @@ export const numberSlice = createSlice({
   },
 })
 
-export const { setSecretNumber, setUserNumber, setHighScore, setGameStatus, changeScore, changeHighScore, restartGame } = numberSlice.actions;
+export const { 
+  setSecretNumber, 
+  setUserNumber, 
+  setHighScore, 
+  setGameStatus, 
+  changeScore, 
+  changeHighScore, 
+  restartGame 
+} = numberSlice.actions;
 
 export default numberSlice.reducer;
