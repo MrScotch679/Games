@@ -2,8 +2,6 @@ import { useDispatch } from 'react-redux';
 
 import { restartGame } from '../features/luckyDiceSlice';
 
-import './newGameButton.scss'
-
 const NewGameButton = () => {
 
   const dispatch = useDispatch();

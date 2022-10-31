@@ -9,6 +9,7 @@ const RollDiceButton = () => {
   const isGameOver = useSelector(state => state.luckyDice.isGameOver);
 
   const forcePlayerChange = () => {
+    
     const randomNumberf = randomNumber();
 
     dispatch(setNumberOnDice(randomNumberf))
