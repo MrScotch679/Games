@@ -31,7 +31,7 @@ export const luckyDice = createSlice({
       state.players[state.currentPlayer].totalScore += state.players[state.currentPlayer].currentScore;
     },
     setWinner: (state) => {
-      if (state.players[state.currentPlayer].totalScore >= 10) {
+      if (state.players[state.currentPlayer].totalScore >= 100) {
         state.players[state.currentPlayer].isWinner = true;
         state.isGameOver = true;
       }
